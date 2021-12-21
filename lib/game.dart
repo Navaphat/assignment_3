@@ -13,7 +13,7 @@ class Game {
   }
 
   int doGuess(int num) {
-    _letCount();
+    _doCount();
     if (_answer! == num) {
       return 0;
     } else if (_answer! < num) {
@@ -27,7 +27,7 @@ class Game {
     return _maxRandom;
   }
 
-  _letCount() {
+  _doCount() {
     _guessCount++;
   }
 

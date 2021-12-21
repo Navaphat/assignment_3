@@ -18,12 +18,13 @@ void main() {
       input = stdin.readLineSync().toString().toUpperCase();
       if (input == 'Y' || input == 'N') {
         ok = true;
+        if (input == 'N') {
+          playAgain = false;
+        }
       }
     } while (!ok);
 
-    if (input == 'N') {
-      playAgain = false;
-    }
+
   } while (playAgain);
 }
 
