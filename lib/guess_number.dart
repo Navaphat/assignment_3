@@ -11,18 +11,18 @@ void main() {
   do {
     playGame();
 
-    var ok = false;
+    var isYesNo = false;
     do {
-      stdout.write('Play again? (Y/N): ');
+      stdout.write('Play again? (Y/N) : ');
       var input = stdin.readLineSync().toString().toUpperCase();
       if (input == 'Y' || input == 'N') {
-        ok = true;
+        isYesNo = true;
 
         if (input == 'N') {
           playAgain = false;
         }
       }
-    } while (!ok);
+    } while (!isYesNo);
   } while (playAgain);
 }
 
