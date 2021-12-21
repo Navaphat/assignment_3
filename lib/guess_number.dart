@@ -12,19 +12,17 @@ void main() {
     playGame();
 
     var ok = false;
-    var input;
     do {
-      stdout.write('Play again? (Y/N):');
-      input = stdin.readLineSync().toString().toUpperCase();
+      stdout.write('Play again? (Y/N): ');
+      var input = stdin.readLineSync().toString().toUpperCase();
       if (input == 'Y' || input == 'N') {
         ok = true;
+
         if (input == 'N') {
           playAgain = false;
         }
       }
     } while (!ok);
-
-
   } while (playAgain);
 }
 
