@@ -3,13 +3,15 @@ import 'dart:math';
 // ignore_for_file: avoid_print
 
 class Game {
-  static const _maxRandom = 100;
+  static dynamic _maxRandom;
+  static final List<int> _round = [];
   int? _answer;
   int _guessCount = 0;
 
-  Game() {
+  Game({int maxRandom = 100}) {
     var r = Random();
-    _answer = r.nextInt(_maxRandom) + 1;
+    _maxRandom = maxRandom;
+    _answer = r.nextInt(maxRandom) + 1;
   }
 
   int doGuess(int num) {
@@ -23,7 +25,7 @@ class Game {
     }
   }
 
-  int getMaxRandom() {
+  int get getMaxRandom {
     return _maxRandom;
   }
 
@@ -31,7 +33,16 @@ class Game {
     _guessCount++;
   }
 
-  int getCount() {
+  _doRound(int info) {
+    _round.add(info);
+  }
+
+  List<int> get getRound {
+    return _round;
+  }
+
+  int get getCount {
+    _doRound(_guessCount);
     return _guessCount;
   }
 }
