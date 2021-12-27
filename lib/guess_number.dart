@@ -18,10 +18,6 @@ void main() {
 
         if (input == 'N') {
           playAgain = false;
-          print("\nYou've played ${Game().getRound.length} games.");
-          for(int i = 0; i < Game().getRound.length; i++){
-            print('🚀 Game #${i+1}: ${Game().getRound[i]} guesses.');
-          }
         }
       }
     } while (!isYesNo);
@@ -29,15 +25,7 @@ void main() {
 }
 
 void playGame() {
-  stdout.write('Enter a maximum number to random : ');
-  var maximumInput = int.tryParse(stdin.readLineSync()!);
-  dynamic game;
-  if(maximumInput != null) {
-    game = Game(maxRandom: maximumInput);
-  }
-  else{
-    game = Game();
-  }
+  var game = Game();
   var isCorrect = false;
 
   print('╔════════════════════════════════════════');
